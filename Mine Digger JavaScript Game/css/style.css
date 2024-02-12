@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .title {
+    margin: 20px;
+  }
+  
+  .subtext {
+    color: #CCC;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .board {
+    display: inline-grid;
+    padding: 10px;
+    grid-template-rows: repeat(var(--size), 40px);
+    grid-template-columns: repeat(var(--size), 40px);
+
+    gap: 2px;
+  }
+  
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid #BBB;
+    user-select: none;
+  }
+  
+  .board > [data-status="block"] {
+    background-image: url("../img/tile_roche.png");
+    cursor: pointer;
+  }
+  
+  .board > [data-status="diamond"] {
+    background-image: url("../img/tile_cristal.png");
+  }
+  
+  .board > [data-status="user"] {
+    background-image: url("../img/hero.png");
+  }
+  
+  .board > [data-status="vide"] {
+    background-image: url("../img/tile_vide.png");
+  }
+
+  #game-over {
+    background-color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #000000;
+    position: fixed;
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+}
+
+  
