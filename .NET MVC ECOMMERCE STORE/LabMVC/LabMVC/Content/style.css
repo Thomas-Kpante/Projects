@@ -1,0 +1,160 @@
+
+.titrePage
+{
+	font-size:16pt;
+	text-align: center;
+	background-color: White;
+	width: 800px;
+	height: 75px;
+	margin-left: 170px;
+}
+
+.mainBox
+{
+	background-color: #b0b0b0;
+	height: auto;
+}
+
+.middleBox img
+{
+	background-color: #b0b0b0;
+	float: center;
+	width: 200px;
+	height: 300px;
+	margin-top: 50px;
+	margin-left: 70px;
+}
+
+.middleBox footer
+{
+	background-color: white;
+	float: center;
+	width: 1200px;
+	height: 55px;
+	text-align: center;
+	margin-left: 350px;
+	
+}
+
+.middleBox h1
+{
+	font-size: 14pt;
+}
+
+.rightBox
+{
+	background-color: White;
+	float: right;
+	padding: 20px;
+	width: 150px;
+	height: 450px;
+	margin-left: 100px;
+	border-radius: 25px;
+	margin-top: 50px;
+	margin-right: 40px;
+	text-align: center;
+}
+
+.leftBox
+{
+	background-color: White;
+	float: left;
+	padding: 20px;
+	height: 200px;
+	width: 150px;
+	margin-left: 40px;
+	margin-right: 50px;
+	margin-top: 50px;
+	border-radius: 25px;
+	text-align: center;
+}
+
+a:link
+{
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+	color: #323232;
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.4s;
+	transition-timing-function: linear;
+}
+
+.titrePage2
+{
+	font-size:16pt;
+	text-align: center;
+	background-color: Grey;
+	width: auto;
+	height: 150px;
+	
+}
+
+.rightBox2
+{
+	float: right;
+	padding: 20px;
+	width: 500px;
+	height: 300px;
+	margin-top: 100px;
+	margin-right: 300px;
+	outline: 2px solid grey;
+    font-weight: bold;
+	
+ }
+ 
+ .rightBox2 h2
+{
+	text-align: center;
+ }
+
+.rightBox2 label
+{
+	float: left;
+	margin-left: 150px;
+ }
+ 
+.leftBox2
+{
+	float: left;
+	padding: 20px;
+	width: 500px;
+	height: 300px;
+	margin-top: 100px;
+	margin-left: 300px;
+	outline: 2px solid grey;
+    font-weight: bold;
+ }
+ 
+ .leftBox2 h2
+{
+	text-align: center;
+ }
+ 
+ .leftBox2 label
+{
+	float: right;
+	margin-right: 40px;
+ }
+ 
+ .bottomBox2
+{
+	float: left;
+	margin-top: 100px;
+	margin-left: 760px;
+ }
+ 
+#cancel
+{
+	 width: 150px;
+	 height: 40px;
+	 margin-right: 80px;
+}
+
+#soumettre
+{
+	 width: 150px;
+	 height: 40px;
+}
+

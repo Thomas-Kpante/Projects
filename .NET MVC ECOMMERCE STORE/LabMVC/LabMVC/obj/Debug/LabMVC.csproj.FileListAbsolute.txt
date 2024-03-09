@@ -1,0 +1,237 @@
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\LabMVC.dll.config
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\LabMVC.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\LabMVC.pdb
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\csc.exe
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\csc.exe.config
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\csc.rsp
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\csi.exe
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\csi.exe.config
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\csi.rsp
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.AppContext.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Console.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.IO.Compression.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Net.Http.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.ValueTuple.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\vbc.exe
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\vbc.exe.config
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\vbc.rsp
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Antlr3.Runtime.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Newtonsoft.Json.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Helpers.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Mvc.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Optimization.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Razor.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.WebPages.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\WebGrease.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Helpers.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Mvc.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Optimization.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.Razor.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.WebPages.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Newtonsoft.Json.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Antlr3.Runtime.pdb
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\obj\Debug\LabMVC.csproj.CoreCompileInputs.cache
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\obj\Debug\LabMVC.csproj.CopyComplete
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\obj\Debug\LabMVC.dll
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\obj\Debug\LabMVC.pdb
+C:\Users\Cave-PC\OneDrive - La Cité\WEB\LabMVC\LabMVC\obj\Debug\LabMVC.csprojAssemblyReference.cache
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\LabMVC.dll.config
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\LabMVC.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\LabMVC.pdb
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\csc.exe
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\csc.exe.config
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\csc.rsp
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\csi.exe
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\csi.exe.config
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\csi.rsp
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.AppContext.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Console.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Globalization.Calendars.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.IO.Compression.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.IO.FileSystem.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Net.Http.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Net.Sockets.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.ValueTuple.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Xml.XPath.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\vbc.exe
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\vbc.exe.config
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\vbc.rsp
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\VBCSCompiler.exe
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Antlr3.Runtime.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Newtonsoft.Json.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Helpers.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Mvc.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Optimization.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Razor.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.WebPages.Deployment.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.WebPages.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.WebPages.Razor.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\WebGrease.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Helpers.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Mvc.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Optimization.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.Razor.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.WebPages.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.WebPages.Deployment.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\System.Web.WebPages.Razor.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Newtonsoft.Json.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Antlr3.Runtime.pdb
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\obj\Debug\LabMVC.csproj.AssemblyReference.cache
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\obj\Debug\LabMVC.csproj.CoreCompileInputs.cache
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\obj\Debug\LabMVC.csproj.CopyComplete
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\obj\Debug\LabMVC.dll
+C:\data\cours\RevisionVirage\25917_TechnologieServeursWeb\UA2_NET\Experimentation\LabMVC\obj\Debug\LabMVC.pdb
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\LabMVC.dll.config
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\LabMVC.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\LabMVC.pdb
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\csc.exe
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\csc.exe.config
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\csc.rsp
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\csi.exe
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\csi.exe.config
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\csi.rsp
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.AppContext.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Console.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Globalization.Calendars.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.IO.Compression.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.IO.FileSystem.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Net.Http.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Net.Sockets.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.ValueTuple.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Xml.XPath.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\vbc.exe
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\vbc.exe.config
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\vbc.rsp
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\VBCSCompiler.exe
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Antlr3.Runtime.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Newtonsoft.Json.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Helpers.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Mvc.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Optimization.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Razor.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.WebPages.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.WebPages.Razor.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\WebGrease.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Helpers.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Mvc.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Optimization.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.Razor.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.WebPages.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\System.Web.WebPages.Razor.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Newtonsoft.Json.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Antlr3.Runtime.pdb
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\obj\Debug\LabMVC.csproj.AssemblyReference.cache
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\obj\Debug\LabMVC.csproj.CoreCompileInputs.cache
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\obj\Debug\LabMVC.csproj.CopyComplete
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\obj\Debug\LabMVC.dll
+C:\Classe\Winter 2024\technologie Web\UA2\LabMVC\LabMVC\obj\Debug\LabMVC.pdb

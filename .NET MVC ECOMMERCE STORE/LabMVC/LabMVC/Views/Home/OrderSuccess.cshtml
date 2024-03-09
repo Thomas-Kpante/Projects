@@ -1,0 +1,109 @@
+﻿
+
+@using LabMVC.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmation de Commande</title>
+
+    <style>
+
+        /*ADDED CSS MANUALLY IN HEADER TO AVOID CSS CONFLICT WITH MVC CSS*/
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f2ff; /* This is a light, soft blue background color */
+        }
+
+        h1 {
+            text-align: center;
+            color: #0275d8;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0275d8;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>.</h1>
+        <h1>Confirmation de Commande</h1>
+
+        <div>
+            <h2>Détails de la Commande</h2>
+            <p><strong>ID de Commande :</strong> @Model.OrderID</p>
+            <p><strong>Date de Commande :</strong> @Model.OrderDate</p>
+            <p><strong>Adresse de Livraison :</strong> @Model.ShippingAddress</p>
+            <p><strong>Montant Total :</strong> $@Model.TotalAmount</p>
+        </div>
+
+        <div>
+            <h2>Détails du Client</h2>
+            <p><strong>Nom Complet :</strong> @Model.FullName</p>
+            <p><strong>Numéro de Téléphone :</strong> @Model.PhoneNumber</p>
+            <p><strong>Email :</strong> @Model.Email</p>
+        </div>
+
+        <div>
+            <h2>Articles Commandés</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom du Produit</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        // Query the database to get order items based on the order ID
+                        OrderItemDAO orderItemDAO = new OrderItemDAO();
+                        var orderItems = orderItemDAO.GetOrderItemsByOrderID(Model.OrderID);
+                    }
+                    @foreach (var item in orderItems)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>$@item.Price</td>
+                            <td>@item.Quantity</td>
+                            <td>$@(item.Price * item.Quantity)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <a href="@Url.Action("Acceuil", "Home")" class="btn btn-primary" style="margin-top: 20px;">Acceuil</a>
+        </div>
+
+    </div>

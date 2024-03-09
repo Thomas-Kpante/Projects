@@ -1,0 +1,99 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.titrePage h1,
+h1 {
+    text-align: center;
+    color: #0275d8;
+    font-size: 2rem; /* Slightly smaller for cart page */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #0275d8;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Additional styles to match the main layout */
+.navbar {
+    background-color: #0275d8;
+    padding: 10px 0;
+    text-align: center;
+}
+
+    .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .navbar ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            .navbar ul li a {
+                text-decoration: none;
+                color: white;
+                font-size: 1.2rem;
+            }
+
+.footer {
+    background-color: #0275d8;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* Button style */
+.commander-button {
+    background-color: #0275d8; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 20px; /* Increased margin for better spacing */
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+    .commander-button:hover {
+        background-color: #004c9e; /* Darker blue */
+    }
