@@ -1,0 +1,85 @@
+/* Reset the hover effect */
+.navbar a:hover {
+    background-color: transparent;
+}
+
+/* Style the navbar toggler */
+.navbar-toggler {
+    border-color: #ffc107;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,...");
+}
+
+/* Increase the size of the toggler for larger screens */
+@media (min-width: 992px) {
+    .navbar-toggler {
+        padding: .25rem 1rem;
+        font-size: 1.25rem;
+    }
+}
+
+/* Style the nav links */
+.nav-link {
+    color: #F9C32D;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #e0a800;
+}
+
+/* Add to your existing navbar.css file */
+
+.navbar {
+    background-color: #000; /* Black background */
+  }
+  
+  .navbar-brand img {
+    height: auto;
+    width: 120px; /* Adjust based on your actual logo size */
+  }
+  
+  .nav-link {
+    color: #fff; /* White text */
+    margin-right: 15px; /* Space between menu items */
+  }
+  
+  .nav-link:hover {
+    color: #ccc; /* Lighter grey on hover */
+  }
+  
+  /* Style the search form */
+  .navbar .form-inline {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-control {
+    margin-right: 10px;
+  }
+  
+  .btn-outline-success {
+    color: #fff; /* White text for the button */
+    border-color: #fff; /* White border */
+  }
+  
+  .btn-outline-success:hover {
+    color: #000; /* Black text on hover */
+    background-color: #fff; /* White background on hover */
+  }
+  
+  /* Add icons to wishlist and account using Font Awesome */
+  .fas.fa-heart,
+  .fas.fa-user {
+    margin-left: 5px; /* Spacing between text and icon */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 991px) {
+    .navbar-nav .nav-link {
+      color: #fff; /* Ensure the text is white in collapsed view */
+    }
+  }
+  

@@ -1,0 +1,271 @@
+test
+NULL
+
+NULL
+
+NULL
+
+NULL
+FullName: testUser
+Password: {"ct":"rOxlBAp+1K0xRv0i38lX1Q==","iv":"3b68f6cc2e27715ecf40fa8a31bb1d94","s":"bff066908e8cfea4"}
+{"ct":"rOxlBAp+1K0xRv0i38lX1Q==","iv":"3b68f6cc2e27715ecf40fa8a31bb1d94","s":"bff066908e8cfea4"}
+array (
+  'ct' => 'rOxlBAp+1K0xRv0i38lX1Q==',
+  'iv' => '3b68f6cc2e27715ecf40fa8a31bb1d94',
+  's' => 'bff066908e8cfea4',
+)
+Decrypted Password: "test"
+No user found
+FullName: Thomas Kpante
+Password: {"ct":"J6oLFFYiDOyWj52bcuuDHA==","iv":"97dfbaaeea09d028087c7d637e581ad7","s":"e15096390cdc6fb3"}
+{"ct":"J6oLFFYiDOyWj52bcuuDHA==","iv":"97dfbaaeea09d028087c7d637e581ad7","s":"e15096390cdc6fb3"}
+array (
+  'ct' => 'J6oLFFYiDOyWj52bcuuDHA==',
+  'iv' => '97dfbaaeea09d028087c7d637e581ad7',
+  's' => 'e15096390cdc6fb3',
+)
+Decrypted Password: "test123"
+User found: array (
+  'ClientID' => 1,
+  'FullName' => 'Thomas Kpante',
+  'PhoneNumber' => '5812345454',
+  'Email' => 'tomkpantetest@gmail.com',
+  'Password' => 'test123',
+  'Role' => 'admin',
+)
+Password verification failed
+{"ct":"VevSScaJk9W9vlyT3RpuQQ==","iv":"36b1fcc55a4d035d84549bc018fd4a82","s":"db0347c5b7ee712c"}
+array (
+  'ct' => 'VevSScaJk9W9vlyT3RpuQQ==',
+  'iv' => '36b1fcc55a4d035d84549bc018fd4a82',
+  's' => 'db0347c5b7ee712c',
+)
+{"ct":"gb+8HU0K3aI8NKg9mkE5bg==","iv":"1b1b337a4eb5bef337d5f887fe2a3f5b","s":"4b5cb3f43b6c2b5f"}
+array (
+  'ct' => 'gb+8HU0K3aI8NKg9mkE5bg==',
+  'iv' => '1b1b337a4eb5bef337d5f887fe2a3f5b',
+  's' => '4b5cb3f43b6c2b5f',
+)
+{"ct":"dSryVlDUcwdli2nhPmg5Pw==","iv":"e112feec95b8809a8014bfb606fb5b53","s":"be83c48d7617c676"}
+array (
+  'ct' => 'dSryVlDUcwdli2nhPmg5Pw==',
+  'iv' => 'e112feec95b8809a8014bfb606fb5b53',
+  's' => 'be83c48d7617c676',
+)
+{"ct":"6628l0S2lLIzMvq31tkoUg==","iv":"79609f0f133cb3752ce1e8acd4f10f7f","s":"9bc4d68a11759c0e"}
+array (
+  'ct' => '6628l0S2lLIzMvq31tkoUg==',
+  'iv' => '79609f0f133cb3752ce1e8acd4f10f7f',
+  's' => '9bc4d68a11759c0e',
+)
+{"ct":"y0euMLFGTJlZYqk7/UdOmg==","iv":"738a66f36686f8a199cee4bf8533e888","s":"bbfde00a076355aa"}
+array (
+  'ct' => 'y0euMLFGTJlZYqk7/UdOmg==',
+  'iv' => '738a66f36686f8a199cee4bf8533e888',
+  's' => 'bbfde00a076355aa',
+)
+{"ct":"hJn4/lz+CxLgkBBXuWHbRQ==","iv":"a4da5419828f2892b1eadce728a0dca6","s":"4cebb4303f9616a4"}
+array (
+  'ct' => 'hJn4/lz+CxLgkBBXuWHbRQ==',
+  'iv' => 'a4da5419828f2892b1eadce728a0dca6',
+  's' => '4cebb4303f9616a4',
+)
+{"ct":"+OPapKfQ0bfngxvRzzwD0g==","iv":"08480ff0bfd8f1e356bcb173c87e15fd","s":"55b65fc7c522f373"}
+array (
+  'ct' => '+OPapKfQ0bfngxvRzzwD0g==',
+  'iv' => '08480ff0bfd8f1e356bcb173c87e15fd',
+  's' => '55b65fc7c522f373',
+)
+{"ct":"gpJD7sQ+DmJik0JtU0Rvzw==","iv":"8ae5f5fdee891cbb722ac928b0703118","s":"0f897288fce39611"}
+array (
+  'ct' => 'gpJD7sQ+DmJik0JtU0Rvzw==',
+  'iv' => '8ae5f5fdee891cbb722ac928b0703118',
+  's' => '0f897288fce39611',
+)
+{"ct":"L+OIIIcehDFtJQfw4ShyOg==","iv":"11086bbeaebbe0068f07cba7e6de8ef2","s":"6860ade359246c84"}
+array (
+  'ct' => 'L+OIIIcehDFtJQfw4ShyOg==',
+  'iv' => '11086bbeaebbe0068f07cba7e6de8ef2',
+  's' => '6860ade359246c84',
+)
+{"ct":"xIlfDedfBO9L7IQOmo8rDQ==","iv":"c90b82c1a348c8fa4549c406c485e871","s":"cdc3647f89d2e17d"}
+array (
+  'ct' => 'xIlfDedfBO9L7IQOmo8rDQ==',
+  'iv' => 'c90b82c1a348c8fa4549c406c485e871',
+  's' => 'cdc3647f89d2e17d',
+)
+{"ct":"0audQZIwOW2Lk0HJneJgdw==","iv":"2a4d7d868cc5fa2f694efc975083815c","s":"03bbb70defe9945b"}
+array (
+  'ct' => '0audQZIwOW2Lk0HJneJgdw==',
+  'iv' => '2a4d7d868cc5fa2f694efc975083815c',
+  's' => '03bbb70defe9945b',
+)
+{"ct":"+PR5jRP941z8+Ya+DLXEqQ==","iv":"1fdfb7a827170ec51c4d2cfb6a539996","s":"5f700306133a3544"}
+array (
+  'ct' => '+PR5jRP941z8+Ya+DLXEqQ==',
+  'iv' => '1fdfb7a827170ec51c4d2cfb6a539996',
+  's' => '5f700306133a3544',
+)
+{"ct":"JdXYyymcmEhnVk9wx/9NjA==","iv":"abaf591863f83aa17e89fd0fd60a7dcd","s":"8d934f8576ef6aa0"}
+array (
+  'ct' => 'JdXYyymcmEhnVk9wx/9NjA==',
+  'iv' => 'abaf591863f83aa17e89fd0fd60a7dcd',
+  's' => '8d934f8576ef6aa0',
+)
+{"ct":"7+Jsuu+H7shVBrNJhtn42w==","iv":"4920ed0810d4883d2589b936bc610f60","s":"30376ca9f08a324d"}
+array (
+  'ct' => '7+Jsuu+H7shVBrNJhtn42w==',
+  'iv' => '4920ed0810d4883d2589b936bc610f60',
+  's' => '30376ca9f08a324d',
+)
+{"ct":"2/PZR0Puw3AEiuq13wI5qw==","iv":"dd776ac8bc34ebc3f024086d4c53f8cf","s":"0f66f7c33e1e5a78"}
+array (
+  'ct' => '2/PZR0Puw3AEiuq13wI5qw==',
+  'iv' => 'dd776ac8bc34ebc3f024086d4c53f8cf',
+  's' => '0f66f7c33e1e5a78',
+)
+{"ct":"hAxs9x93/JqIFiB0Yy360w==","iv":"8cc8477f7804a88d7732ab77467ebcd6","s":"1cc64efbec8badd6"}
+array (
+  'ct' => 'hAxs9x93/JqIFiB0Yy360w==',
+  'iv' => '8cc8477f7804a88d7732ab77467ebcd6',
+  's' => '1cc64efbec8badd6',
+)
+{"ct":"iM/jBd+eWa8T0JjrrskGJQ==","iv":"911fb060310f92bf2308c4a6b04411ed","s":"38714c96c1ec7cdf"}
+array (
+  'ct' => 'iM/jBd+eWa8T0JjrrskGJQ==',
+  'iv' => '911fb060310f92bf2308c4a6b04411ed',
+  's' => '38714c96c1ec7cdf',
+)
+Login failed for FullName: test with decrypted password: "test"
+{"ct":"50edPRqPPPquYLa7zZ4zDg==","iv":"41caccf14e4ee753c68286b5a8008464","s":"723334568e1a681b"}
+array (
+  'ct' => '50edPRqPPPquYLa7zZ4zDg==',
+  'iv' => '41caccf14e4ee753c68286b5a8008464',
+  's' => '723334568e1a681b',
+)
+Login failed for FullName: Thomas Kpante with decrypted password: "test123"
+{"ct":"EF5NjyaPUgg59u1Y8CP9WA==","iv":"66fe83a1d218e35b4f7fe6102ba8ab8d","s":"76a7ee4b59732df1"}
+array (
+  'ct' => 'EF5NjyaPUgg59u1Y8CP9WA==',
+  'iv' => '66fe83a1d218e35b4f7fe6102ba8ab8d',
+  's' => '76a7ee4b59732df1',
+)
+{"ct":"XI6YAoUZ5wx65RlxQ5+4SQ==","iv":"5e65f44595242b851e7a850f1b0459ed","s":"523761e7268f8bbe"}
+array (
+  'ct' => 'XI6YAoUZ5wx65RlxQ5+4SQ==',
+  'iv' => '5e65f44595242b851e7a850f1b0459ed',
+  's' => '523761e7268f8bbe',
+)
+Login failed for FullName: Thomas Kpante with decrypted password: test
+{"ct":"QLQLe6ggiveKuH0k6pWjag==","iv":"44433a0bd501f30f48ca917127d01b84","s":"ceb35dd5721c2839"}
+array (
+  'ct' => 'QLQLe6ggiveKuH0k6pWjag==',
+  'iv' => '44433a0bd501f30f48ca917127d01b84',
+  's' => 'ceb35dd5721c2839',
+)
+{"ct":"WRfbUyTMLGuEo70h3+kmUQ==","iv":"99a56a8ce9acaa71aea4263c6f800507","s":"720f3ead75ed73b4"}
+array (
+  'ct' => 'WRfbUyTMLGuEo70h3+kmUQ==',
+  'iv' => '99a56a8ce9acaa71aea4263c6f800507',
+  's' => '720f3ead75ed73b4',
+)
+{"ct":"Q5lZCPeW3slClZKwRMfzZQ==","iv":"4320f05eaec864d6bb20c7a8338ec1b1","s":"6dde3bb8de1374ce"}
+array (
+  'ct' => 'Q5lZCPeW3slClZKwRMfzZQ==',
+  'iv' => '4320f05eaec864d6bb20c7a8338ec1b1',
+  's' => '6dde3bb8de1374ce',
+)
+{"ct":"SwEWxL4n9I2nF6Dm9fYUkw==","iv":"7826d20e8c7553fe75fee7de392fe428","s":"236e2f2f191f8ee2"}
+array (
+  'ct' => 'SwEWxL4n9I2nF6Dm9fYUkw==',
+  'iv' => '7826d20e8c7553fe75fee7de392fe428',
+  's' => '236e2f2f191f8ee2',
+)
+{"ct":"Xt45X2dtKTcvSHwnPHoe2g==","iv":"f431533f8e2cc4d50c285c1f960e9a5b","s":"bd7f811eb05eca69"}
+array (
+  'ct' => 'Xt45X2dtKTcvSHwnPHoe2g==',
+  'iv' => 'f431533f8e2cc4d50c285c1f960e9a5b',
+  's' => 'bd7f811eb05eca69',
+)
+Login failed for FullName: Thomas Kpante with decrypted password: test213
+{"ct":"4mOUwWDvup9ayYMBPjKUQw==","iv":"21678753334faf2991c3a5202a45f0c1","s":"f5aa009f78938fc2"}
+array (
+  'ct' => '4mOUwWDvup9ayYMBPjKUQw==',
+  'iv' => '21678753334faf2991c3a5202a45f0c1',
+  's' => 'f5aa009f78938fc2',
+)
+{"ct":"gLr3YFGNDwQTRW+914msCA==","iv":"e5f63a798682d5f32105151cb51da5b8","s":"30dcb8165dd865d6"}
+array (
+  'ct' => 'gLr3YFGNDwQTRW+914msCA==',
+  'iv' => 'e5f63a798682d5f32105151cb51da5b8',
+  's' => '30dcb8165dd865d6',
+)
+{"ct":"FzNSG8ii55INF7VEkBIqOQ==","iv":"c1319c2a8e8e44a1a750e7aefa5b7400","s":"165cee328d200386"}
+array (
+  'ct' => 'FzNSG8ii55INF7VEkBIqOQ==',
+  'iv' => 'c1319c2a8e8e44a1a750e7aefa5b7400',
+  's' => '165cee328d200386',
+)
+Redirecting to: list.php{"ct":"MszIpeJX3Lax9jSG84/tiQ==","iv":"c6904be057f3fdafb287a6095204af49","s":"e44a554908f9b0fb"}
+array (
+  'ct' => 'MszIpeJX3Lax9jSG84/tiQ==',
+  'iv' => 'c6904be057f3fdafb287a6095204af49',
+  's' => 'e44a554908f9b0fb',
+)
+Redirecting to: /funko_pop_shop/products/list.php{"ct":"kexUVcYCu8oNBSe+moja0w==","iv":"6d6671f9484fa01dc9d18c77170ff059","s":"58b31c4ee3bbf8de"}
+array (
+  'ct' => 'kexUVcYCu8oNBSe+moja0w==',
+  'iv' => '6d6671f9484fa01dc9d18c77170ff059',
+  's' => '58b31c4ee3bbf8de',
+)
+Login failed for FullName: test with decrypted password: test
+{"ct":"SoSeffX0GtGTKds8FiL5qg==","iv":"b38d24b429ab17ca5ce2d8e17035f29c","s":"6c8c1f4629375c43"}
+array (
+  'ct' => 'SoSeffX0GtGTKds8FiL5qg==',
+  'iv' => 'b38d24b429ab17ca5ce2d8e17035f29c',
+  's' => '6c8c1f4629375c43',
+)
+Redirecting to: /funko_pop_shop/products/list.php{"ct":"XV0l1TUk+b4lP467lbCkuw==","iv":"b66ae90b9e60e8e376077217b8e5fca7","s":"d44005ea3a28c821"}
+array (
+  'ct' => 'XV0l1TUk+b4lP467lbCkuw==',
+  'iv' => 'b66ae90b9e60e8e376077217b8e5fca7',
+  's' => 'd44005ea3a28c821',
+)
+Redirecting to: /funko_pop_shop/products/list.php{"ct":"kCfylz6KBgII0FiBAmpBKQ==","iv":"e1e921bac6cd1dc5d9378e026b2521b8","s":"c05ad01601ca153b"}
+array (
+  'ct' => 'kCfylz6KBgII0FiBAmpBKQ==',
+  'iv' => 'e1e921bac6cd1dc5d9378e026b2521b8',
+  's' => 'c05ad01601ca153b',
+)
+Redirecting to: /funko_pop_shop/products/list.php{"ct":"uzFJrj0XKsyI3lNL3w3Chw==","iv":"6999e31206330e2844cfbc07ecbc444c","s":"9f094707aad67ab2"}
+array (
+  'ct' => 'uzFJrj0XKsyI3lNL3w3Chw==',
+  'iv' => '6999e31206330e2844cfbc07ecbc444c',
+  's' => '9f094707aad67ab2',
+)
+{"ct":"3iSOJQsHXnhjnsJxOuX7oA==","iv":"cec12b6badfb9e4319078a58b64547a0","s":"58b2e5ca889027a8"}
+array (
+  'ct' => '3iSOJQsHXnhjnsJxOuX7oA==',
+  'iv' => 'cec12b6badfb9e4319078a58b64547a0',
+  's' => '58b2e5ca889027a8',
+)
+{"ct":"kt9PL5py9nkX+jbRKcEvyw==","iv":"5571ae1cbbd42082b159174775fdfbd6","s":"c6079c85ebec0953"}
+array (
+  'ct' => 'kt9PL5py9nkX+jbRKcEvyw==',
+  'iv' => '5571ae1cbbd42082b159174775fdfbd6',
+  's' => 'c6079c85ebec0953',
+)
+{"ct":"u/61CDkm/XmnvWq7OsZj/g==","iv":"e777256441f341ad29d5cae0cbff5832","s":"ffa061d45bf63285"}
+array (
+  'ct' => 'u/61CDkm/XmnvWq7OsZj/g==',
+  'iv' => 'e777256441f341ad29d5cae0cbff5832',
+  's' => 'ffa061d45bf63285',
+)
+Error processing order: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ecommerce store.order' doesn't exist
+Error processing order: SQLSTATE[HY093]: Invalid parameter number
+FonctionneFonctionneArraybenoitFonctionneFonctionne1Error processing order: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ShippingAddress' in 'field list'
+Error processing order: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ShippingAddress' in 'field list'
+Error processing order: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ShippingAddress' in 'field list'
+Error processing order: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ShippingAddress' in 'field list'
+Error processing order: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Price' in 'field list'
+Fonctionne2TESTTEST111Error deleting user account and associated orders: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`ecommerce store`.`orderitems`, CONSTRAINT `orderitems_ibfk_1` FOREIGN KEY (`OrderID`) REFERENCES `orders` (`OrderID`)). User ID: 1, Error Code: 23000Fonctionne2Fonctionne4Fonctionne2Fonctionne5Fonctionne2Fonctionne6Fonctionne7Fonctionne2Fonctionne7
