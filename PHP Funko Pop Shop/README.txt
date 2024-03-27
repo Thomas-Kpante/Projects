@@ -20,6 +20,7 @@ Features:
    - Delete products.
 
 4. Security:
+   - full password encryption using CryptoJS.enc.Base64
    - Authentication system for user login.
    - Role-based access control to restrict certain functionalities to administrators only.
 
