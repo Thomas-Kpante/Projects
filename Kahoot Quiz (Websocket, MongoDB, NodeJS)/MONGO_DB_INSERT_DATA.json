@@ -1,0 +1,280 @@
+[{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa087"
+  },
+  "question": "Qui a marqué le plus de buts dans l'histoire de la LNH?",
+  "options": [
+    "Wayne Gretzky",
+    "Gordie Howe",
+    "Alex Ovechkin",
+    "Mario Lemieux"
+  ],
+  "correctAnswer": "Wayne Gretzky",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa088"
+  },
+  "question": "Quelle équipe a remporté le plus de Coupes Stanley?",
+  "options": [
+    "Canadiens de Montréal",
+    "Maple Leafs de Toronto",
+    "Red Wings de Détroit",
+    "Bruins de Boston"
+  ],
+  "correctAnswer": "Canadiens de Montréal",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa089"
+  },
+  "question": "En quelle année la LNH a-t-elle été fondée?",
+  "options": [
+    "1917",
+    "1920",
+    "1895",
+    "1935"
+  ],
+  "correctAnswer": "1917",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa08a"
+  },
+  "question": "Quel joueur est connu sous le nom de 'Le Grand'?",
+  "options": [
+    "Wayne Gretzky",
+    "Bobby Orr",
+    "Mario Lemieux",
+    "Sidney Crosby"
+  ],
+  "correctAnswer": "Wayne Gretzky",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa08b"
+  },
+  "question": "Quel pays a remporté la médaille d'or en hockey masculin aux Jeux olympiques d'hiver de 2010?",
+  "options": [
+    "Canada",
+    "États-Unis",
+    "Russie",
+    "Suède"
+  ],
+  "correctAnswer": "Canada",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa08c"
+  },
+  "question": "Qui a été le premier joueur à marquer 50 buts en 50 matchs?",
+  "options": [
+    "Maurice Richard",
+    "Bobby Hull",
+    "Phil Esposito",
+    "Wayne Gretzky"
+  ],
+  "correctAnswer": "Maurice Richard",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa08d"
+  },
+  "question": "Quelle équipe de la LNH est connue sous le nom des 'Six Originales'?",
+  "options": [
+    "Blackhawks de Chicago",
+    "Oilers d'Edmonton",
+    "Sharks de San Jose",
+    "Panthers de la Floride"
+  ],
+  "correctAnswer": "Blackhawks de Chicago",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa08e"
+  },
+  "question": "Quel est le nom du trophée décerné au champion de la LNH?",
+  "options": [
+    "Coupe Stanley",
+    "Trophée Hart",
+    "Trophée Art Ross",
+    "Trophée Vézina"
+  ],
+  "correctAnswer": "Coupe Stanley",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa08f"
+  },
+  "question": "Quel joueur détient le record du plus grand nombre de points en une saison de la LNH?",
+  "options": [
+    "Wayne Gretzky",
+    "Mario Lemieux",
+    "Jaromir Jagr",
+    "Mark Messier"
+  ],
+  "correctAnswer": "Wayne Gretzky",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa090"
+  },
+  "question": "Dans quelle équipe Sidney Crosby a-t-il joué lors de sa saison recrue dans la LNH?",
+  "options": [
+    "Penguins de Pittsburgh",
+    "Flyers de Philadelphie",
+    "Bruins de Boston",
+    "Canadiens de Montréal"
+  ],
+  "correctAnswer": "Penguins de Pittsburgh",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa091"
+  },
+  "question": "Qui a été le premier gardien à marquer un but dans un match de la LNH?",
+  "options": [
+    "Ron Hextall",
+    "Martin Brodeur",
+    "Patrick Roy",
+    "Jacques Plante"
+  ],
+  "correctAnswer": "Ron Hextall",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa092"
+  },
+  "question": "Quelle équipe a remporté la Coupe Stanley en 1999?",
+  "options": [
+    "Stars de Dallas",
+    "Devils du New Jersey",
+    "Red Wings de Détroit",
+    "Avalanche du Colorado"
+  ],
+  "correctAnswer": "Stars de Dallas",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa093"
+  },
+  "question": "Quel joueur détient le record du plus grand nombre de minutes de pénalité dans l'histoire de la LNH?",
+  "options": [
+    "Tiger Williams",
+    "Chris Nilan",
+    "Dave Schultz",
+    "Marty McSorley"
+  ],
+  "correctAnswer": "Tiger Williams",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa094"
+  },
+  "question": "Combien de joueurs sont sur la glace pour chaque équipe lors d'un match?",
+  "options": [
+    "6",
+    "5",
+    "7",
+    "8"
+  ],
+  "correctAnswer": "6",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa095"
+  },
+  "question": "Qui a remporté le Trophée Hart de la LNH pour le joueur le plus utile en 2020?",
+  "options": [
+    "Leon Draisaitl",
+    "Nathan MacKinnon",
+    "Connor McDavid",
+    "Auston Matthews"
+  ],
+  "correctAnswer": "Leon Draisaitl",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa096"
+  },
+  "question": "Quelle équipe a été la première à remporter deux Coupes Stanley consécutives dans l'ère du plafond salarial (après 2005)?",
+  "options": [
+    "Penguins de Pittsburgh",
+    "Blackhawks de Chicago",
+    "Kings de Los Angeles",
+    "Lightning de Tampa Bay"
+  ],
+  "correctAnswer": "Penguins de Pittsburgh",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa097"
+  },
+  "question": "Qui a été le premier joueur européen à être capitaine d'une équipe de la LNH ayant remporté une Coupe Stanley?",
+  "options": [
+    "Nicklas Lidstrom",
+    "Zdeno Chara",
+    "Jaromir Jagr",
+    "Teemu Selanne"
+  ],
+  "correctAnswer": "Nicklas Lidstrom",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa098"
+  },
+  "question": "Pour quelle équipe Wayne Gretzky jouait-il lorsqu'il a battu le record du plus grand nombre de buts de tous les temps?",
+  "options": [
+    "Kings de Los Angeles",
+    "Oilers d'Edmonton",
+    "Rangers de New York",
+    "Blues de St. Louis"
+  ],
+  "correctAnswer": "Kings de Los Angeles",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa099"
+  },
+  "question": "En quelle année les Golden Knights de Vegas ont-ils rejoint la LNH?",
+  "options": [
+    "2017",
+    "2016",
+    "2018",
+    "2015"
+  ],
+  "correctAnswer": "2017",
+  "category": "Hockey"
+},
+{
+  "_id": {
+    "$oid": "66e1d910b17a0b270bdaa09a"
+  },
+  "question": "Quelle équipe de la LNH n'a jamais remporté la Coupe Stanley?",
+  "options": [
+    "Sabres de Buffalo",
+    "Lightning de Tampa Bay",
+    "Hurricanes de la Caroline",
+    "Blackhawks de Chicago"
+  ],
+  "correctAnswer": "Sabres de Buffalo",
+  "category": "Hockey"
+}]
