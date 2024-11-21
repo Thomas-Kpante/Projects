@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .produit-page {
+    display: flex;
+    flex-direction: column;
+    background-image: url('./Image/Ordinateur_Background2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+
+
+.H3 {
+    color: white;
+    padding-top: 10px;
+}
+
+
+
+Button{
+    padding-left: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens or zoom levels */
+    .produit-page {
+        height: 40em;
+    }
+}
+
+

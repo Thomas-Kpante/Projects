@@ -1,0 +1,67 @@
+
+
+.home-page{
+    display: flex;
+    flex-direction: column;
+    background-image: url('./Image/Ordinateur_Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.app-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+}
+
+
+.commencer{
+        
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        align-content: center;
+        border: 3px solid black;
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: 5px 5px black;
+        color: black;
+        font-weight: bold;
+        text-decoration: none; /* Remove the underline */
+        padding: 1%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 14%;
+}
+
+.h1Titre{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    padding-bottom: 2%;
+}
+
+  .commencer:hover {
+    background-color: gray; /* Ensure no underline on hover as well */
+  }
+
+ 
+  /* Responsive styles for smaller screens (e.g., mobile) */
+@media screen and (max-width: 768px) {
+    .container {
+      margin-top: 6em; /* Adjust the margin for smaller screens */
+    }
+  
+    .h1Titre {
+      padding-bottom: 15px; /* Adjust the padding for smaller screens */
+    }
+  }

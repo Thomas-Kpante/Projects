@@ -1,0 +1,42 @@
+/* custom.css */
+.card-header h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-body h5 {
+    font-size: 18px;
+}
+
+.list-group-item {
+    font-size: 16px;
+}
+
+/* custom.css */
+.blue-accent {
+    color: #2a9fd6; /* A lighter shade of blue */
+}
+
+.bg-light-blue {
+    background-color: #d0e9f6; /* Very light blue for backgrounds */
+}
+
+.border-blue {
+    border-color: #0056b3 !important; /* Deeper blue for borders */
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Adjustments to default Bootstrap components for more blue */
+.btn-primary {
+    background-color: #0056b3; /* Darker shade of blue */
+    border-color: #004085;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    border-color: #003567;
+}

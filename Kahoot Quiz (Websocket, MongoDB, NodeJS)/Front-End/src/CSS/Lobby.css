@@ -1,0 +1,92 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.lobby-container {
+    text-align: center;
+}
+
+h1 {
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.player-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the circles horizontally */
+    gap: 30px; /* Adds more space between the circles */
+    margin-top: 30px;
+}
+
+.player {
+    width: 200px;  /* Increase the circle width */
+    height: 200px; /* Increase the circle height */
+    background-color: #28a745;
+    border-radius: 50%;
+    margin: 10px; /* Adds space around each circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem; /* Increase font size */
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px; /* Add padding to allow more space for text */
+    text-align: center;
+}
+
+.player span {
+    display: block;
+    word-wrap: break-word; /* Ensures long text breaks and wraps */
+    line-height: 1.2; /* Adjust line height to prevent overlap */
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.home-button:hover {
+    background-color: #d32f2f;
+}

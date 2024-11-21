@@ -1,0 +1,32 @@
+/* OrderSummary.css */
+
+.Order-Page {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./Image/Ordinateur_Background2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  }
+
+  .H3 {
+    color: white;
+    padding-top: 10px;
+}
+  
+  /* Add the following styles to make the table smaller */
+  .TableContainer {
+    max-width: 600px; /* Adjust the max-width as needed */
+    padding-top: 5em;
+  }
+  
+  .TableContainer Table {
+    width: 100%;
+  }
+  
+  /* Add the following style to center the buttons */
+  .float-right {
+    text-align: center;
+  }
+  

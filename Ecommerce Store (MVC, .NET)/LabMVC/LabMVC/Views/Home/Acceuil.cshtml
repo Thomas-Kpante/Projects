@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Acceuil";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lab1</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Acceuil.css">
+    <style>
+        /*Info for message here since style are overwritting modifications if I do a css file*/
+        .introMessage {
+            font-size: 1.2rem; /* Slightly larger font size */
+            font-weight: bold; /* Make the text bold */
+            color: #333; /* Dark color for better contrast */
+            max-width: 800px; /* Maximum width */
+            margin: 20px auto 30px; /* More vertical space and auto margins for horizontal centering */
+            padding: 15px; /* Padding inside the container for the text */
+            background-color: #f9f9f9; /* Light background color for the text container */
+            border-left: 4px solid #0275d8; /* A colored bar on the left for visual interest */
+            text-align: center; /* Center align the text */
+            line-height: 1.4; /* Adjust line height for better readability */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to lift the text container */
+        }
+        body {
+            background-color: #e6f2ff; /* This is a light, soft blue background color */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="titrePage">
+        <h1>Kpante Electronique</h1>
+    </div>
+
+    <!-- Introductory message -->
+    <div class="introMessage">
+        <p>Bienvenue chez Kpante Electronique, votre boutique informatique spécialisée où vous pouvez sélectionner les composants de votre choix pour assembler l'ordinateur adapté à vos besoins. Découvrez notre gamme de produits et personnalisez votre configuration dès maintenant.</p>
+    </div>
+
+    <div class="mainBox">
+        <div class="middleBox">
+
+            <!-- Category Filter Dropdown -->
+            <form method="get" action="@Url.Action("Acceuil", "Home")">
+                <label for="categoryFilter">Filtrer Par Catégorie:</label>
+                <select id="categoryFilter" name="category" onchange="this.form.submit()">
+                    <option value="">Toutes les Catégories</option>
+                    @foreach (var cat in ViewBag.Categories)
+                    {
+                        <option value="@cat.CategoryName" @(Request.QueryString["category"] == cat.CategoryName ? "selected" : "")>@cat.CategoryName</option>
+                    }
+                </select>
+            </form>
+
+            <!-- Display grid of products -->
+            <div class="productGrid">
+                @foreach (var product in ViewBag.Products)
+                {
+                    <div class="productItem">
+                        <h2>@Html.ActionLink((string)product.Name, "ProductDetails", "Home", new { id = product.ProductID }, new { @class = "product-link" })</h2>
+                        <img src="@product.ImageURL" alt="@product.Name" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" class="product-image">
+                        <p>@String.Format("{0:C}", product.Price)</p>
+                        <p>@product.CategoryID</p> <!-- It's better to show the category name instead of ID -->
+                        @Html.ActionLink("Ajouter Au Panier", "AddToCart", "Home", new { productId = product.ProductID, currentView = "Acceuil" }, new { @class = "btn btn-primary" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+@using LabMVC.Models
+@model YourNamespace.Cart
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="~/Content/Order.css">
+    <style>
+
+        /*added the styling here because of overwritting css files that were blocking my modifications*/
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f2ff; /* This is a light, soft blue background color */
+        }
+
+        h1 {
+            text-align: center;
+            color: #0275d8;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #0275d8;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #01579b;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0275d8;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulaire De Commande</h1>
+    <form id="orderForm" method="POST">
+        <h2>Information Client</h2>
+        <label for="fullName">Nom Complet:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="phoneNumber">Numero de telephone:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10}">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <h2>Information de livraison</h2>
+        <label for="shippingAddress">Address:</label>
+        <input type="text" id="shippingAddress" name="shippingAddress" required>
+
+        <h2>Produits dans la commande:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the order items -->
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>$@item.Price</td>
+                        <td>@item.Quantity</td> <!-- Display quantity -->
+                        <td>$@(item.Price * item.Quantity)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button type="submit">Placer la commande</button>
+    </form>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var fullName = encodeURIComponent(document.getElementById('fullName').value);
+            var phoneNumber = encodeURIComponent(document.getElementById('phoneNumber').value);
+            var email = encodeURIComponent(document.getElementById('email').value);
+            var shippingAddress = encodeURIComponent(document.getElementById('shippingAddress').value);
+
+            // Dynamically set the form's action including fullName, phoneNumber, email, and shippingAddress
+            this.action = '@Url.Action("PlaceOrder", "Home")' + '?fullName=' + fullName + '&phoneNumber=' + phoneNumber + '&email=' + email + '&shippingAddress=' + shippingAddress;
+
+            this.submit(); // Submit the form with the dynamically set action
+        });
+    </script>
+</body>
+</html>

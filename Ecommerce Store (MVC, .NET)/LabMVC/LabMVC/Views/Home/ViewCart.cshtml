@@ -1,0 +1,117 @@
+@using LabMVC.Models
+@model YourNamespace.Cart
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voir Panier</title>
+    <link rel="stylesheet" href="~/Content/Cart.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* Put style in head because of other CSS files overwriting */
+        .commander-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            display: block; /* Make the button a block element */
+            margin: 20px auto; /* Center the button horizontally */
+        }
+
+            .commander-button:hover {
+                background-color: #45a049; /* Darker Green */
+            }
+
+        body {
+            background-color: #e6f2ff; /* This is a light, soft blue background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Panier</h1>
+
+    @if (Model.Items.Any())
+    {
+        <table>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price$</td>
+                    <td>
+                        <!-- Input field for quantity with onchange event -->
+                        <input type="number" id="quantity_@item.ProductId" value="@item.Quantity" min="1" onchange="updateQuantity(@item.ProductId)">
+                    </td>
+                    <td>
+                        $<span id="itemTotal_@item.ProductId">@item.Total</span>
+                    </td>
+                    <td>
+                        <!-- Action link to remove item from cart -->
+                        @Html.ActionLink("Retirer", "RemoveFromCart", "Home", new { productId = item.ProductId }, null)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3"><strong>Total:</strong></td>
+                <td colspan="2">$<span id="cartTotal">@Model.CalculateTotal().ToString("N2")</span></td>
+            </tr>
+        </table>
+    }
+    else
+    {
+        <p>Votre panier est vide.</p>
+    }
+
+    <!-- Link to proceed to order -->
+    @Html.ActionLink("Commander", "Order", "Home", null, new { @class = "commander-button" })
+
+    <p>
+        <!-- Link to continue shopping -->
+        @Html.ActionLink("Continuer De Magasiner", "Acceuil", "Home")
+    </p>
+
+    <script>
+        // Function to update quantity of a product in the cart **USED CHAT GPT TO HELP WITH THE AJAX FUNCTIONS AND THE SCRIPT FUNCTIONS TO HELP WITH THE QUANTITY UPDATE*
+        function updateQuantity(productId) {
+            var newQuantity = parseInt($('#quantity_' + productId).val());
+            $.ajax({
+                url: '@Url.Action("UpdateCartQuantity", "Home")',
+                type: 'POST',
+                data: { productId: productId, newQuantity: newQuantity },
+                success: function (response) {
+                    updateProductTotal(productId, response.productTotal);
+                    updateCartTotal(response.cartTotal);
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+
+        // Function to update total price of a product in the UI
+        function updateProductTotal(productId, productTotal) {
+            $('#itemTotal_' + productId).text(productTotal.toFixed(2));
+        }
+
+        // Function to update cart total price in the UI
+        function updateCartTotal(cartTotal) {
+            $('#cartTotal').text(cartTotal.toFixed(2));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@model LabMVC.Models.ProductVO
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/product-details.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Details</h1>
+        <div class="product-details">
+            <h2>@Model.Name</h2>
+            <img src="@Model.ImageURL" alt="@Model.Name" class="product-image">
+            <p>Description: @Model.Description</p>
+            <p>Price: @Model.Price$</p>
+            <p>Category: @Model.CategoryID</p>
+        </div>
+        <div class="buttons">
+            <a href="@Url.Action("Acceuil", "Home")" class="btn">Back to Home</a>
+            <button class="btn" onclick="addToCart(@Model.ProductID)">Add to Cart</button>
+        </div>

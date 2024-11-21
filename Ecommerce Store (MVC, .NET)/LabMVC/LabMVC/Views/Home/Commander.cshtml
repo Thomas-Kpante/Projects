@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Commande";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab1</title>
+    <link rel="stylesheet" href="Styles/style.css">
+
+    <script>
+
+      function confirmFunction()
+      {
+         var r = confirm("Confirmation de la commande.");
+      }
+    </script>
+</head>
+<body>
+    <div class="titrePage2">
+        <br><h1>Formulaire de commande</h1>
+    </div>
+
+    <div class=leftBox2>
+        <form action="Confirmation" name="identForm" method="post">
+            <h2>Identification du client</h2><br>
+            <input type="textbox" name="TxtNom" style="margin-right: 600px; float: right;">
+            <label for="Nom">Nom:</label><br><br>
+            <input type="textbox" name="Adresse" style="margin-right: 600px; float: right;">
+            <label for="Adresse">Adresse:</label><br><br>
+            <input type="textbox" name="Ville" style="margin-right: 600px; float: right;">
+            <label for="Ville">Ville:</label><br><br>
+            <input type="textbox" name="Pays" style="margin-right: 600px; float: right;">
+            <label for="Pays">Pays:</label><br><br>
+            <input type="tel" placeholder="(123)-456-7890" name="telephone" style="margin-right: 600px; float: right;">
+            <label for="telephone">Téléphone:</label><br><br>
+
+    </div>
+
+    
+    <input type="submit" value="Acheter" />
+    </form>
+</body>
+</html>
