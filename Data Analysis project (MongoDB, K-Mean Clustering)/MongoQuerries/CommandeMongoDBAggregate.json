@@ -1,0 +1,36 @@
+{
+    "Revenu maximum": [
+        {
+            "$group": {
+                "_id": null,
+                "MaxRevenu": { "$max": "$Income" }
+            }
+        }
+    ],
+    "Nombre de personnes sans enfants": [
+        {
+            "$match": {
+                "Kidhome": 0,
+                "Teenhome": 0
+            }
+        },
+        {
+            "$count": "PersonneSansEnfant"
+        }
+    ],
+    "Moyenne des revenus pour les parents ayant deux enfants": [
+        {
+            "$match": {
+                "$expr": {
+                    "$eq": [{ "$add": ["$Kidhome", "$Teenhome"] }, 2]
+                }
+            }
+        },
+        {
+            "$group": {
+                "_id": null,
+                "SalaireMoyen": { "$avg": "$Income" }
+            }
+        }
+    ]
+}
