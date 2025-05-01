@@ -1,0 +1,258 @@
+Index: secure_chat/lib/repositories/data_repository.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// lib/repositories/data_repository.dart\r\nimport 'package:cloud_firestore/cloud_firestore.dart';\r\nimport 'package:firebase_auth/firebase_auth.dart';\r\nimport 'dart:convert';\r\nimport 'dart:typed_data';\r\n\r\nimport '../utils/local_storage.dart';\r\nimport '../utils/crypto_utils.dart';\r\nimport 'package:pointycastle/asymmetric/rsa.dart';\r\nimport 'package:basic_utils/basic_utils.dart';\r\n\r\nimport '../utils/sercure_store.dart';\r\n\r\n/// --- Models ---\r\nclass UserProfile {\r\n  final String username;\r\n  final String profilePicture;\r\n  final String phoneNumber;\r\n  final String publicKey; //\r\n  final String privateKeyBackup;\r\n\r\n  UserProfile({\r\n    required this.username,\r\n    required this.profilePicture,\r\n    required this.phoneNumber,\r\n    required this.publicKey,\r\n    this.privateKeyBackup = \"\",\r\n  });\r\n\r\n  Map<String, dynamic> toMap() {\r\n    return {\r\n      'username': username,\r\n      'profilePicture': profilePicture,\r\n      'phoneNumber': phoneNumber,\r\n      'publicKey': publicKey,\r\n    };\r\n  }\r\n\r\n  factory UserProfile.fromMap(Map<String, dynamic> map) {\r\n    return UserProfile(\r\n      username: map['username'] as String,\r\n      profilePicture: map['profilePicture'] as String,\r\n      phoneNumber: map['phoneNumber'] as String,\r\n      publicKey: map['publicKey'] as String? ?? \"\",\r\n      privateKeyBackup: map['privateKeyBackup'] as String? ?? \"\",\r\n    );\r\n  }\r\n}\r\n\r\nclass ChatMessage {\r\n  final String sender; // Nom d'utilisateur de l'expéditeur\r\n  final String text;   // Texte ou charge utile JSON cryptée\r\n  final DateTime timestamp;\r\n\r\n  ChatMessage({\r\n    required this.sender,\r\n    required this.text,\r\n    required this.timestamp,\r\n  });\r\n\r\n  Map<String, dynamic> toMap() {\r\n    return {\r\n      'sender': sender,\r\n      'text': text,\r\n      'timestamp': timestamp.toIso8601String(),\r\n    };\r\n  }\r\n\r\n  factory ChatMessage.fromMap(Map<String, dynamic> map) {\r\n    return ChatMessage(\r\n      sender: map['sender'] as String,\r\n      text: map['text'] as String,\r\n      timestamp: DateTime.parse(map['timestamp'] as String),\r\n    );\r\n  }\r\n}\r\n\r\nclass Chat {\r\n  final String chatId;\r\n  final List<ChatMessage> messages;\r\n  Chat({required this.chatId, required this.messages});\r\n}\r\n\r\nclass Contact {\r\n  final String id; // ID du document Firestore\r\n  final String name;\r\n  final String image;\r\n  final String uid; // UID du destinataire\r\n\r\n  Contact({\r\n    this.id = '',\r\n    required this.name,\r\n    required this.image,\r\n    required this.uid,\r\n  });\r\n\r\n  Map<String, dynamic> toMap() {\r\n    return {\r\n      'name': name,\r\n      'image': image,\r\n      'uid': uid,\r\n    };\r\n  }\r\n\r\n  factory Contact.fromMap(Map<String, dynamic> map, {String id = ''}) {\r\n    return Contact(\r\n      id: id,\r\n      name: map['name'] as String,\r\n      image: map['image'] as String,\r\n      uid: map['uid'] as String? ?? '',\r\n    );\r\n  }\r\n}\r\n\r\n/// --- Repository Interface ---\r\nabstract class DataRepository {\r\n  // Opérations de profil\r\n  Future<UserProfile?> getUserProfile();\r\n  Future<void> updateUserProfile(UserProfile profile);\r\n  Future<UserProfile?> getUserByPhone(String phoneNumber);\r\n\r\n  // Opérations de chat\r\n  Future<List<Chat>> fetchChats();\r\n  Future<String> createChat(String receiverUsername);\r\n  Future<void> sendMessage(String chatId, ChatMessage message);\r\n\r\n  // Méthodes d'encryption hybride\r\n  Future<void> sendEncryptedMessage(String chatId, String plaintext);\r\n  Future<String> decryptReceivedMessage(ChatMessage encryptedMsg, String passphrase);\r\n\r\n  // Opérations de contacts\r\n  Future<List<Contact>> fetchContacts();\r\n  Future<void> addContact(Contact contact);\r\n  Future<void> deleteContact(String contactId);\r\n\r\n  // Méthode additionnelle pour vérifier l'existence d'un utilisateur\r\n  Future<bool> doesUsernameExist(String username);\r\n}\r\n\r\n/// --- Implémentation Firebase et stockage local ---\r\nclass FirebaseDataRepository implements DataRepository {\r\n  final FirebaseFirestore firestore = FirebaseFirestore.instance;\r\n\r\n  // OPÉRATIONS DE PROFIL\r\n\r\n  @override\r\n  Future<UserProfile?> getUserProfile() async {\r\n    String? username = await LocalStorage.getUsername();\r\n    String? profilePicture = await LocalStorage.getProfilePicture();\r\n    String? phoneNumber = await LocalStorage.getPhoneNumber();\r\n    if (username != null && profilePicture != null && phoneNumber != null) {\r\n      // On suppose que le document utilisateur est stocké avec le nom d'utilisateur comme ID.\r\n      return UserProfile(\r\n        username: username,\r\n        profilePicture: profilePicture,\r\n        phoneNumber: phoneNumber,\r\n        publicKey: \"\", // Valeur par défaut ; updateUserProfile() mettra à jour cette valeur.\r\n      );\r\n    }\r\n    return null;\r\n  }\r\n\r\n  @override\r\n  Future<void> updateUserProfile(UserProfile profile) async {\r\n    // Enregistre le document utilisateur avec le nom d'utilisateur comme ID.\r\n    await firestore.collection('usernames').doc(profile.username).set({\r\n      'uid': FirebaseAuth.instance.currentUser!.uid,\r\n      'username': profile.username,\r\n      'phoneNumber': profile.phoneNumber,\r\n      'profilePicture': profile.profilePicture,\r\n      'publicKey': profile.publicKey,\r\n      'privateKeyBackup': profile.privateKeyBackup ?? \"\", // NEW backup field\r\n      'updatedAt': DateTime.now().toIso8601String(),\r\n    });\r\n    await LocalStorage.saveUsername(profile.username);\r\n    await LocalStorage.saveProfilePicture(profile.profilePicture);\r\n    await LocalStorage.savePhoneNumber(profile.phoneNumber);\r\n  }\r\n\r\n  @override\r\n  Future<UserProfile?> getUserByPhone(String phoneNumber) async {\r\n    QuerySnapshot snapshot = await firestore\r\n        .collection('usernames')\r\n        .where('phoneNumber', isEqualTo: phoneNumber)\r\n        .limit(1)\r\n        .get();\r\n    if (snapshot.docs.isNotEmpty) {\r\n      Map<String, dynamic> data =\r\n      snapshot.docs.first.data() as Map<String, dynamic>;\r\n      return UserProfile(\r\n        username: data['username'] ?? snapshot.docs.first.id,\r\n        profilePicture: data['profilePicture'] ?? \"\",\r\n        phoneNumber: data['phoneNumber'] as String,\r\n        publicKey: data['publicKey'] as String? ?? \"\",\r\n      );\r\n    }\r\n    return null;\r\n  }\r\n\r\n  // OPÉRATIONS DE CHAT\r\n\r\n  @override\r\n  Future<List<Chat>> fetchChats() async {\r\n    // On suppose que les documents de chat stockent les participants sous forme de noms d'utilisateur.\r\n    String? currentUsername = await LocalStorage.getUsername();\r\n    if (currentUsername == null) return [];\r\n    QuerySnapshot snapshot = await firestore\r\n        .collection('chats')\r\n        .where('participants', arrayContains: currentUsername)\r\n        .get();\r\n    List<Chat> chats = [];\r\n    for (var doc in snapshot.docs) {\r\n      Map<String, dynamic> data = doc.data() as Map<String, dynamic>;\r\n      List<dynamic> messagesData = data['messages'] ?? [];\r\n      List<ChatMessage> messages = messagesData\r\n          .map((m) => ChatMessage.fromMap(m as Map<String, dynamic>))\r\n          .toList();\r\n      chats.add(Chat(chatId: doc.id, messages: messages));\r\n    }\r\n    return chats;\r\n  }\r\n\r\n  @override\r\n  Future<String> createChat(String receiverUsername) async {\r\n    // Utilise les noms d'utilisateur (et non les UIDs) pour créer le document de chat.\r\n    String? currentUsername = await LocalStorage.getUsername();\r\n    if (currentUsername == null || receiverUsername.isEmpty) {\r\n      throw Exception(\"Les noms d'utilisateur ne sont pas disponibles\");\r\n    }\r\n    List<String> participants = [currentUsername, receiverUsername]..sort();\r\n    String chatId = participants.join('_');\r\n    DocumentReference chatDoc = firestore.collection('chats').doc(chatId);\r\n    DocumentSnapshot docSnapshot = await chatDoc.get();\r\n    if (!docSnapshot.exists) {\r\n      await chatDoc.set({\r\n        'participants': participants,\r\n        'messages': [],\r\n      });\r\n    }\r\n    return chatId;\r\n  }\r\n\r\n  @override\r\n  Future<void> sendMessage(String chatId, ChatMessage message) async {\r\n    DocumentReference chatDoc = firestore.collection('chats').doc(chatId);\r\n    await chatDoc.set({\r\n      'messages': FieldValue.arrayUnion([message.toMap()]),\r\n    }, SetOptions(merge: true));\r\n  }\r\n\r\n  // MÉTHODES D'ENCRYPTION HYBRIDE\r\n\r\n  @override\r\n  Future<void> sendEncryptedMessage(String chatId, String plaintext) async {\r\n    print(\"DEBUG: sendEncryptedMessage -> chatId=$chatId, plaintext=$plaintext\");\r\n\r\n    // 1) Charge le document de chat\r\n    DocumentSnapshot docSnapshot =\r\n    await firestore.collection('chats').doc(chatId).get();\r\n    if (!docSnapshot.exists) {\r\n      print(\"DEBUG: Le document de chat $chatId n'existe PAS. Lancement d'une exception.\");\r\n      throw Exception(\"Le chat $chatId n'existe pas\");\r\n    }\r\n    Map<String, dynamic> chatData = docSnapshot.data() as Map<String, dynamic>;\r\n    List<dynamic> participants = chatData['participants'] ?? [];\r\n    print(\"DEBUG: Participants du chat => $participants\");\r\n    if (participants.length < 2) {\r\n      print(\"DEBUG: Pas assez de participants dans le chat. Lancement d'une exception.\");\r\n      throw Exception(\"Pas assez de participants dans le chat pour l'encryption.\");\r\n    }\r\n\r\n    // 2) Nom d'utilisateur actuel et l'autre participant\r\n    String? currentUsername = await LocalStorage.getUsername();\r\n    if (currentUsername == null) {\r\n      print(\"DEBUG: Le nom d'utilisateur actuel est nul, impossible de continuer.\");\r\n      throw Exception(\"Nom d'utilisateur actuel introuvable\");\r\n    }\r\n    String otherUsername =\r\n    (participants[0] == currentUsername) ? participants[1] : participants[0];\r\n\r\n    print(\"DEBUG: currentUsername=$currentUsername, otherUsername=$otherUsername\");\r\n\r\n    // 3) Récupère le document pour l'expéditeur (currentUsername)\r\n    DocumentSnapshot senderDoc =\r\n    await firestore.collection('usernames').doc(currentUsername).get();\r\n    if (!senderDoc.exists) {\r\n      print(\"DEBUG: Le document Firestore pour l'expéditeur $currentUsername n'existe PAS !\");\r\n      throw Exception(\"Document de l'expéditeur introuvable dans Firestore\");\r\n    }\r\n    Map<String, dynamic> senderData = senderDoc.data() as Map<String, dynamic>;\r\n    String senderPublicKeyPem = senderData['publicKey'] ?? \"\";\r\n    String senderDocUid = senderData['uid'] ?? \"NO_UID_FIELD\";\r\n    print(\"DEBUG: Champ 'uid' du document de l'expéditeur = $senderDocUid, Clé publique Firestore:\\n$senderPublicKeyPem\");\r\n\r\n    // 4) Récupère le document pour le destinataire (otherUsername)\r\n    DocumentSnapshot recipientDoc =\r\n    await firestore.collection('usernames').doc(otherUsername).get();\r\n    if (!recipientDoc.exists) {\r\n      print(\"DEBUG: Le document Firestore pour le destinataire $otherUsername n'existe PAS !\");\r\n      throw Exception(\"Document du destinataire introuvable dans Firestore\");\r\n    }\r\n    Map<String, dynamic> recipientData =\r\n    recipientDoc.data() as Map<String, dynamic>;\r\n    String recipientPublicKeyPem = recipientData['publicKey'] ?? \"\";\r\n    String recipientDocUid = recipientData['uid'] ?? \"NO_UID_FIELD\";\r\n    print(\"DEBUG: Champ 'uid' du document du destinataire = $recipientDocUid, Clé publique Firestore:\\n$recipientPublicKeyPem\");\r\n\r\n    if (senderPublicKeyPem.isEmpty || recipientPublicKeyPem.isEmpty) {\r\n      print(\"DEBUG: L'un ou l'autre des utilisateurs n'a pas de clé publique dans Firestore. Lancement d'une erreur.\");\r\n      throw Exception(\"Clé publique de l'expéditeur ou du destinataire manquante\");\r\n    }\r\n\r\n    // 4.5) Vérifie l'UID local pour le debug\r\n    final localUid = FirebaseAuth.instance.currentUser?.uid;\r\n    print(\"DEBUG: UID local via FirebaseAuth.currentUser => $localUid\");\r\n\r\n    // 5) Convertit les chaînes PEM en objets RSAPublicKey\r\n    RSAPublicKey senderPubKey = CryptoUtils.rsaPublicKeyFromPem(senderPublicKeyPem);\r\n    RSAPublicKey recipientPubKey = CryptoUtils.rsaPublicKeyFromPem(recipientPublicKeyPem);\r\n\r\n    // 6) Génère une clé AES aléatoire et chiffre le texte en clair\r\n    Uint8List aesKey = generateRandomAESKey(256);\r\n    Map<String, String> aesResult = aesEncrypt(plaintext, aesKey);\r\n    String aesCiphertext = aesResult['ciphertext']!;\r\n    String aesIv = aesResult['iv']!;\r\n    print(\"DEBUG: AES ciphertext=$aesCiphertext, AES iv=$aesIv\");\r\n\r\n    // 7) Chiffre la clé AES avec RSA pour l'expéditeur et le destinataire\r\n    String aesKeyBase64 = base64.encode(aesKey);\r\n    String encryptedAesKeyForSender = rsaEncrypt(aesKeyBase64, senderPubKey);\r\n    String encryptedAesKeyForRecipient = rsaEncrypt(aesKeyBase64, recipientPubKey);\r\n    print(\"DEBUG: Longueur encryptedAesKeyForSender=${encryptedAesKeyForSender.length}\");\r\n    print(\"DEBUG: Longueur encryptedAesKeyForRecipient=${encryptedAesKeyForRecipient.length}\");\r\n\r\n    // 8) Construit le JSON final\r\n    String payloadJson = jsonEncode({\r\n      'aesCiphertext': aesCiphertext,\r\n      'aesIv': aesIv,\r\n      'encryptedAesKeyForSender': encryptedAesKeyForSender,\r\n      'encryptedAesKeyForRecipient': encryptedAesKeyForRecipient,\r\n    });\r\n    print(\"DEBUG: JSON final => $payloadJson\");\r\n\r\n    // 9) Construit un ChatMessage\r\n    ChatMessage newMessage = ChatMessage(\r\n      sender: currentUsername,\r\n      text: payloadJson,\r\n      timestamp: DateTime.now(),\r\n    );\r\n\r\n    // 10) Sauvegarde le nouveau message crypté\r\n    print(\"DEBUG: Enregistrement du nouveau message dans le document de chat. Terminé.\\n-------------------\");\r\n    await sendMessage(chatId, newMessage);\r\n  }\r\n\r\n  // MÉTHODES D'ENCRYPTION HYBRIDE\r\n\r\n  @override\r\n  Future<String> decryptReceivedMessage(ChatMessage encryptedMsg, String ignoredParam) async {\r\n    String rawText = encryptedMsg.text;\r\n    print(\"[decryptReceivedMessage] Début. sender=${encryptedMsg.sender}\\nTexte brut:\\n$rawText\\n----------\");\r\n\r\n    // 1) Analyse le JSON\r\n    late Map<String, dynamic> payload;\r\n    try {\r\n      payload = jsonDecode(rawText);\r\n      print(\"[decryptReceivedMessage] JSON analysé => $payload\");\r\n    } catch (e) {\r\n      print(\"[decryptReceivedMessage] JSON invalide, retourne le texte brut. Erreur: $e\");\r\n      return rawText;\r\n    }\r\n\r\n    // 2) Vérifie les champs requis\r\n    if (!payload.containsKey('aesCiphertext') ||\r\n        !payload.containsKey('aesIv') ||\r\n        (!payload.containsKey('encryptedAesKeyForSender') &&\r\n            !payload.containsKey('encryptedAesKeyForRecipient'))) {\r\n      print(\"[decryptReceivedMessage] Champs requis manquants => retourne le texte brut\");\r\n      return rawText;\r\n    }\r\n\r\n    // 3) Récupère l'UID de l'utilisateur actuel\r\n    final uid = FirebaseAuth.instance.currentUser?.uid;\r\n    if (uid == null) {\r\n      print(\"[decryptReceivedMessage] Aucun utilisateur connecté => impossible de décrypter.\");\r\n      throw Exception(\"Aucun utilisateur authentifié, impossible de décrypter\");\r\n    }\r\n    print(\"[decryptReceivedMessage] UID local => $uid\");\r\n\r\n    // 4) Récupère la clé privée cryptée stockée localement pour cet UID\r\n    String? encPrivKeyJson = await LocalStorage.getPrivateKeyForUid(uid);\r\n    if (encPrivKeyJson == null) {\r\n      print(\"[decryptReceivedMessage] Aucune clé privée stockée pour UID=$uid !\");\r\n      throw Exception(\"Aucune clé privée stockée pour l'utilisateur $uid\");\r\n    }\r\n    print(\"[decryptReceivedMessage] Clé privée cryptée trouvée => $encPrivKeyJson\");\r\n\r\n    // 5) Récupère la passphrase depuis le SecureStore\r\n    String? storedPassphrase = await SecureStore.getPassphraseForUid(uid);\r\n    if (storedPassphrase == null) {\r\n      print(\"[decryptReceivedMessage] Aucune passphrase trouvée dans SecureStore pour UID=$uid\");\r\n      throw Exception(\"Aucune passphrase trouvée pour l'utilisateur $uid\");\r\n    }\r\n\r\n    // 6) Décrypte la clé privée\r\n    String privateKeyPem;\r\n    try {\r\n      Map<String, dynamic> privObj = jsonDecode(encPrivKeyJson);\r\n      privateKeyPem = decryptPrivateKey(privObj['encrypted'], privObj['iv'], storedPassphrase);\r\n      print(\"[decryptReceivedMessage] Clé privée décrytpée avec succès. (Omit for security)\");\r\n    } catch (e) {\r\n      print(\"[decryptReceivedMessage] Erreur lors du décryptage de la clé privée => $e\");\r\n      rethrow;\r\n    }\r\n\r\n    // 7) Parse la clé privée en objet RSAPrivateKey\r\n    RSAPrivateKey userPrivateKey;\r\n    try {\r\n      userPrivateKey = CryptoUtils.rsaPrivateKeyFromPem(privateKeyPem);\r\n      print(\"[decryptReceivedMessage] Analyse de la clé privée RSA réussie\");\r\n    } catch (e) {\r\n      print(\"[decryptReceivedMessage] Erreur lors de l'analyse de la clé RSA => $e\");\r\n      rethrow;\r\n    }\r\n\r\n    // 8) Détermine si l'utilisateur est l'expéditeur ou le destinataire\r\n    String? currentUsername = await LocalStorage.getUsername();\r\n    bool isSender = (encryptedMsg.sender == currentUsername);\r\n    print(\"[decryptReceivedMessage] currentUsername=$currentUsername, isSender=$isSender\");\r\n\r\n    // 9) Sélectionne la clé AES RSA appropriée\r\n    String encryptedAesKey = isSender\r\n        ? payload['encryptedAesKeyForSender']\r\n        : payload['encryptedAesKeyForRecipient'];\r\n    print(\"[decryptReceivedMessage] Utilisation de la clé AES RSA suivante => $encryptedAesKey\");\r\n\r\n    // 10) Décrypte la clé AES avec RSA\r\n    String aesKeyBase64;\r\n    try {\r\n      aesKeyBase64 = rsaDecrypt(encryptedAesKey, userPrivateKey);\r\n      print(\"[decryptReceivedMessage] RSA décryptage réussi, longueur base64=${aesKeyBase64.length}\");\r\n    } catch (e) {\r\n      print(\"[decryptReceivedMessage] Erreur RSA lors du décryptage => $e\");\r\n      rethrow;\r\n    }\r\n\r\n    // 11) Décrypte le message avec AES-GCM\r\n    String aesCiphertext = payload['aesCiphertext'];\r\n    String aesIv = payload['aesIv'];\r\n    print(\"[decryptReceivedMessage] aesCiphertext=$aesCiphertext, aesIv=$aesIv => décryptage en cours...\");\r\n    String decryptedMessage;\r\n    try {\r\n      Uint8List aesKey = base64.decode(aesKeyBase64);\r\n      decryptedMessage = aesDecrypt(aesCiphertext, aesIv, aesKey);\r\n      print(\"[decryptReceivedMessage] AES décryptage => $decryptedMessage\");\r\n    } catch (e) {\r\n      print(\"[decryptReceivedMessage] Exception lors du décryptage AES => $e\");\r\n      rethrow;\r\n    }\r\n\r\n    print(\"[decryptReceivedMessage] Terminé => $decryptedMessage\\n----------------\");\r\n    return decryptedMessage;\r\n  }\r\n\r\n  // OPÉRATIONS SUR LES CONTACTS\r\n\r\n  @override\r\n  Future<List<Contact>> fetchContacts() async {\r\n    String? username = await LocalStorage.getUsername();\r\n    if (username == null) return [];\r\n    QuerySnapshot snapshot = await firestore\r\n        .collection('usernames')\r\n        .doc(username)\r\n        .collection('contacts')\r\n        .get();\r\n    return snapshot.docs.map((doc) {\r\n      return Contact.fromMap(doc.data() as Map<String, dynamic>, id: doc.id);\r\n    }).toList();\r\n  }\r\n\r\n  @override\r\n  Future<void> addContact(Contact contact) async {\r\n    bool exists = await doesUsernameExist(contact.name);\r\n    if (!exists) {\r\n      throw Exception(\"L'utilisateur n'existe pas\");\r\n    }\r\n    String receiverUID = contact.uid;\r\n    if (receiverUID.isEmpty) {\r\n      DocumentSnapshot doc = await firestore.collection('usernames').doc(contact.name).get();\r\n      if (doc.exists) {\r\n        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;\r\n        receiverUID = data['uid'] ?? \"\";\r\n      }\r\n    }\r\n    if (receiverUID.isEmpty) {\r\n      throw Exception(\"UID de l'utilisateur introuvable\");\r\n    }\r\n    Contact newContact = Contact(name: contact.name, image: contact.image, uid: receiverUID);\r\n    String? currentUsername = await LocalStorage.getUsername();\r\n    if (currentUsername == null) {\r\n      throw Exception(\"Utilisateur non connecté\");\r\n    }\r\n    var contactData = newContact.toMap();\r\n    contactData['ownerUid'] = FirebaseAuth.instance.currentUser!.uid;\r\n    await firestore.collection('usernames').doc(currentUsername).collection('contacts').add(contactData);\r\n  }\r\n\r\n  @override\r\n  Future<void> deleteContact(String contactId) async {\r\n    String? currentUsername = await LocalStorage.getUsername();\r\n    if (currentUsername == null) {\r\n      throw Exception(\"Utilisateur non connecté\");\r\n    }\r\n    await firestore\r\n        .collection('usernames')\r\n        .doc(currentUsername)\r\n        .collection('contacts')\r\n        .doc(contactId)\r\n        .delete();\r\n  }\r\n\r\n  Future<bool> isUsernameAvailable(String username) async {\r\n    DocumentSnapshot snapshot = await firestore.collection('usernames').doc(username).get();\r\n    return !snapshot.exists;\r\n  }\r\n\r\n  @override\r\n  Future<bool> doesUsernameExist(String username) async {\r\n    DocumentSnapshot snapshot = await firestore.collection('usernames').doc(username).get();\r\n    return snapshot.exists;\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/secure_chat/lib/repositories/data_repository.dart b/secure_chat/lib/repositories/data_repository.dart
+--- a/secure_chat/lib/repositories/data_repository.dart	(revision b03224a5ef3a9835fb3bd30858a388a96b72ded5)
++++ b/secure_chat/lib/repositories/data_repository.dart	(date 1744728526432)
+@@ -252,121 +252,86 @@
+ 
+   @override
+   Future<void> sendEncryptedMessage(String chatId, String plaintext) async {
+-    print("DEBUG: sendEncryptedMessage -> chatId=$chatId, plaintext=$plaintext");
+-
+-    // 1) Charge le document de chat
++    // Load chat document
+     DocumentSnapshot docSnapshot =
+     await firestore.collection('chats').doc(chatId).get();
+     if (!docSnapshot.exists) {
+-      print("DEBUG: Le document de chat $chatId n'existe PAS. Lancement d'une exception.");
+-      throw Exception("Le chat $chatId n'existe pas");
++      throw Exception("Chat $chatId doesn't exist");
+     }
+     Map<String, dynamic> chatData = docSnapshot.data() as Map<String, dynamic>;
+     List<dynamic> participants = chatData['participants'] ?? [];
+-    print("DEBUG: Participants du chat => $participants");
+     if (participants.length < 2) {
+-      print("DEBUG: Pas assez de participants dans le chat. Lancement d'une exception.");
+-      throw Exception("Pas assez de participants dans le chat pour l'encryption.");
++      throw Exception("Not enough participants to encrypt message");
+     }
+ 
+-    // 2) Nom d'utilisateur actuel et l'autre participant
+     String? currentUsername = await LocalStorage.getUsername();
+     if (currentUsername == null) {
+-      print("DEBUG: Le nom d'utilisateur actuel est nul, impossible de continuer.");
+-      throw Exception("Nom d'utilisateur actuel introuvable");
++      throw Exception("Current username not found");
+     }
+     String otherUsername =
+     (participants[0] == currentUsername) ? participants[1] : participants[0];
+ 
+-    print("DEBUG: currentUsername=$currentUsername, otherUsername=$otherUsername");
+-
+-    // 3) Récupère le document pour l'expéditeur (currentUsername)
+     DocumentSnapshot senderDoc =
+     await firestore.collection('usernames').doc(currentUsername).get();
+-    if (!senderDoc.exists) {
+-      print("DEBUG: Le document Firestore pour l'expéditeur $currentUsername n'existe PAS !");
+-      throw Exception("Document de l'expéditeur introuvable dans Firestore");
+-    }
+-    Map<String, dynamic> senderData = senderDoc.data() as Map<String, dynamic>;
+-    String senderPublicKeyPem = senderData['publicKey'] ?? "";
+-    String senderDocUid = senderData['uid'] ?? "NO_UID_FIELD";
+-    print("DEBUG: Champ 'uid' du document de l'expéditeur = $senderDocUid, Clé publique Firestore:\n$senderPublicKeyPem");
+-
+-    // 4) Récupère le document pour le destinataire (otherUsername)
+     DocumentSnapshot recipientDoc =
+     await firestore.collection('usernames').doc(otherUsername).get();
+-    if (!recipientDoc.exists) {
+-      print("DEBUG: Le document Firestore pour le destinataire $otherUsername n'existe PAS !");
+-      throw Exception("Document du destinataire introuvable dans Firestore");
+-    }
+-    Map<String, dynamic> recipientData =
+-    recipientDoc.data() as Map<String, dynamic>;
++
++    Map<String, dynamic> senderData = senderDoc.data() as Map<String, dynamic>;
++    Map<String, dynamic> recipientData = recipientDoc.data() as Map<String, dynamic>;
++
++    String senderPublicKeyPem = senderData['publicKey'] ?? "";
+     String recipientPublicKeyPem = recipientData['publicKey'] ?? "";
+-    String recipientDocUid = recipientData['uid'] ?? "NO_UID_FIELD";
+-    print("DEBUG: Champ 'uid' du document du destinataire = $recipientDocUid, Clé publique Firestore:\n$recipientPublicKeyPem");
+ 
+     if (senderPublicKeyPem.isEmpty || recipientPublicKeyPem.isEmpty) {
+-      print("DEBUG: L'un ou l'autre des utilisateurs n'a pas de clé publique dans Firestore. Lancement d'une erreur.");
+-      throw Exception("Clé publique de l'expéditeur ou du destinataire manquante");
++      throw Exception("Missing public key(s)");
+     }
+ 
+-    // 4.5) Vérifie l'UID local pour le debug
+-    final localUid = FirebaseAuth.instance.currentUser?.uid;
+-    print("DEBUG: UID local via FirebaseAuth.currentUser => $localUid");
+-
+-    // 5) Convertit les chaînes PEM en objets RSAPublicKey
+     RSAPublicKey senderPubKey = CryptoUtils.rsaPublicKeyFromPem(senderPublicKeyPem);
+     RSAPublicKey recipientPubKey = CryptoUtils.rsaPublicKeyFromPem(recipientPublicKeyPem);
+ 
+-    // 6) Génère une clé AES aléatoire et chiffre le texte en clair
+     Uint8List aesKey = generateRandomAESKey(256);
+     Map<String, String> aesResult = aesEncrypt(plaintext, aesKey);
+     String aesCiphertext = aesResult['ciphertext']!;
+     String aesIv = aesResult['iv']!;
+-    print("DEBUG: AES ciphertext=$aesCiphertext, AES iv=$aesIv");
+ 
+-    // 7) Chiffre la clé AES avec RSA pour l'expéditeur et le destinataire
+     String aesKeyBase64 = base64.encode(aesKey);
+     String encryptedAesKeyForSender = rsaEncrypt(aesKeyBase64, senderPubKey);
+     String encryptedAesKeyForRecipient = rsaEncrypt(aesKeyBase64, recipientPubKey);
+-    print("DEBUG: Longueur encryptedAesKeyForSender=${encryptedAesKeyForSender.length}");
+-    print("DEBUG: Longueur encryptedAesKeyForRecipient=${encryptedAesKeyForRecipient.length}");
+ 
+-    // 8) Construit le JSON final
+     String payloadJson = jsonEncode({
+       'aesCiphertext': aesCiphertext,
+       'aesIv': aesIv,
+       'encryptedAesKeyForSender': encryptedAesKeyForSender,
+       'encryptedAesKeyForRecipient': encryptedAesKeyForRecipient,
+     });
+-    print("DEBUG: JSON final => $payloadJson");
+ 
+-    // 9) Construit un ChatMessage
++    print("MESSAGE ENVOYÉ À FIREBASE (encrypté): $payloadJson"); // <- Key output
++
+     ChatMessage newMessage = ChatMessage(
+       sender: currentUsername,
+       text: payloadJson,
+       timestamp: DateTime.now(),
+     );
+ 
+-    // 10) Sauvegarde le nouveau message crypté
+-    print("DEBUG: Enregistrement du nouveau message dans le document de chat. Terminé.\n-------------------");
+     await sendMessage(chatId, newMessage);
+   }
+ 
++
+   // MÉTHODES D'ENCRYPTION HYBRIDE
+ 
+   @override
+   Future<String> decryptReceivedMessage(ChatMessage encryptedMsg, String ignoredParam) async {
+     String rawText = encryptedMsg.text;
+-    print("[decryptReceivedMessage] Début. sender=${encryptedMsg.sender}\nTexte brut:\n$rawText\n----------");
++
+ 
+     // 1) Analyse le JSON
+     late Map<String, dynamic> payload;
+     try {
+       payload = jsonDecode(rawText);
+-      print("[decryptReceivedMessage] JSON analysé => $payload");
++
+     } catch (e) {
+-      print("[decryptReceivedMessage] JSON invalide, retourne le texte brut. Erreur: $e");
++
++
+       return rawText;
+     }
+ 
+@@ -375,30 +340,31 @@
+         !payload.containsKey('aesIv') ||
+         (!payload.containsKey('encryptedAesKeyForSender') &&
+             !payload.containsKey('encryptedAesKeyForRecipient'))) {
+-      print("[decryptReceivedMessage] Champs requis manquants => retourne le texte brut");
++
++
+       return rawText;
+     }
+ 
+     // 3) Récupère l'UID de l'utilisateur actuel
+     final uid = FirebaseAuth.instance.currentUser?.uid;
+     if (uid == null) {
+-      print("[decryptReceivedMessage] Aucun utilisateur connecté => impossible de décrypter.");
++
+       throw Exception("Aucun utilisateur authentifié, impossible de décrypter");
+     }
+-    print("[decryptReceivedMessage] UID local => $uid");
++
+ 
+     // 4) Récupère la clé privée cryptée stockée localement pour cet UID
+     String? encPrivKeyJson = await LocalStorage.getPrivateKeyForUid(uid);
+     if (encPrivKeyJson == null) {
+-      print("[decryptReceivedMessage] Aucune clé privée stockée pour UID=$uid !");
++
+       throw Exception("Aucune clé privée stockée pour l'utilisateur $uid");
+     }
+-    print("[decryptReceivedMessage] Clé privée cryptée trouvée => $encPrivKeyJson");
++
+ 
+     // 5) Récupère la passphrase depuis le SecureStore
+     String? storedPassphrase = await SecureStore.getPassphraseForUid(uid);
+     if (storedPassphrase == null) {
+-      print("[decryptReceivedMessage] Aucune passphrase trouvée dans SecureStore pour UID=$uid");
++
+       throw Exception("Aucune passphrase trouvée pour l'utilisateur $uid");
+     }
+ 
+@@ -407,9 +373,9 @@
+     try {
+       Map<String, dynamic> privObj = jsonDecode(encPrivKeyJson);
+       privateKeyPem = decryptPrivateKey(privObj['encrypted'], privObj['iv'], storedPassphrase);
+-      print("[decryptReceivedMessage] Clé privée décrytpée avec succès. (Omit for security)");
++
+     } catch (e) {
+-      print("[decryptReceivedMessage] Erreur lors du décryptage de la clé privée => $e");
++
+       rethrow;
+     }
+ 
+@@ -417,48 +383,48 @@
+     RSAPrivateKey userPrivateKey;
+     try {
+       userPrivateKey = CryptoUtils.rsaPrivateKeyFromPem(privateKeyPem);
+-      print("[decryptReceivedMessage] Analyse de la clé privée RSA réussie");
++
+     } catch (e) {
+-      print("[decryptReceivedMessage] Erreur lors de l'analyse de la clé RSA => $e");
++
+       rethrow;
+     }
+ 
+     // 8) Détermine si l'utilisateur est l'expéditeur ou le destinataire
+     String? currentUsername = await LocalStorage.getUsername();
+     bool isSender = (encryptedMsg.sender == currentUsername);
+-    print("[decryptReceivedMessage] currentUsername=$currentUsername, isSender=$isSender");
++
+ 
+     // 9) Sélectionne la clé AES RSA appropriée
+     String encryptedAesKey = isSender
+         ? payload['encryptedAesKeyForSender']
+         : payload['encryptedAesKeyForRecipient'];
+-    print("[decryptReceivedMessage] Utilisation de la clé AES RSA suivante => $encryptedAesKey");
++
+ 
+     // 10) Décrypte la clé AES avec RSA
+     String aesKeyBase64;
+     try {
+       aesKeyBase64 = rsaDecrypt(encryptedAesKey, userPrivateKey);
+-      print("[decryptReceivedMessage] RSA décryptage réussi, longueur base64=${aesKeyBase64.length}");
++
+     } catch (e) {
+-      print("[decryptReceivedMessage] Erreur RSA lors du décryptage => $e");
++
+       rethrow;
+     }
+ 
+     // 11) Décrypte le message avec AES-GCM
+     String aesCiphertext = payload['aesCiphertext'];
+     String aesIv = payload['aesIv'];
+-    print("[decryptReceivedMessage] aesCiphertext=$aesCiphertext, aesIv=$aesIv => décryptage en cours...");
++
+     String decryptedMessage;
+     try {
+       Uint8List aesKey = base64.decode(aesKeyBase64);
+       decryptedMessage = aesDecrypt(aesCiphertext, aesIv, aesKey);
+-      print("[decryptReceivedMessage] AES décryptage => $decryptedMessage");
++
+     } catch (e) {
+-      print("[decryptReceivedMessage] Exception lors du décryptage AES => $e");
++
+       rethrow;
+     }
+ 
+-    print("[decryptReceivedMessage] Terminé => $decryptedMessage\n----------------");
++
+     return decryptedMessage;
+   }
+ 
